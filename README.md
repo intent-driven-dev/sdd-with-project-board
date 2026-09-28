@@ -1,4 +1,16 @@
-# URL Shortener
+# Spec-Driven Development: Engineering with Intent (Manning Publications) Companion Code
+
+This repository contains companion code for the book [_Spec-Driven Development: Engineering with Intent (Manning Publications)_](https://hubs.ly/Q04vSdlS0).
+
+<img width="1584" height="396" alt="linkedin profile banner" src="https://github.com/user-attachments/assets/6e80ce16-4daa-454d-a685-83ec0e0a146f" />
+
+# Spec Driven Development integration with Project Backlog Board
+
+This repository contains the companion code for the Chapter 5 Spec Driven Development integration with Project Backlog Board exercise.
+
+If you want to follow the evolution of the exercise, inspect the commit history. Each iteration shows the prompt used by the coding agent and the code changes introduced in that step.
+
+# Project Details
 
 A dependency-free CommonJS Node.js application. Requires Node.js 22 or newer. No installation step is needed.
 
@@ -30,12 +42,3 @@ PORT=3100 npm start
 PORT=3100 BASE_URL=http://127.0.0.1:3100 npm start
 ```
 
-It must be an absolute HTTP(S) origin without credentials, a path other than `/`, query, or fragment. Invalid configuration stops startup. The incoming Host header never controls generated links. `BASE_URL` does not configure TLS or a proxy.
-
-## Behavior and limitations
-
-- Destinations are trimmed and serialized with Node's URL parser; path, query, and fragment semantics are retained.
-- Creation accepts URL-encoded form bodies up to 16 KiB. Invalid destinations return 400, oversized bodies 413, and unsupported content types 415.
-- Short links redirect with HTTP 302. Unknown links and routes return 404.
-- Mappings exist only in memory in a **single process**. Every restart loses all links. Multiple processes do not share mappings.
-- Persistence, expiry, accounts, analytics, custom aliases, and link management are outside this version.
